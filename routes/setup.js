@@ -72,19 +72,6 @@ const setup = async (server, { hdbCore, logger }) => {
         results.cache_table_attribute_error_result = e;
       }
 
-      request.body = {
-        operation: 'create_table',
-        schema: 'newrelic_cache',
-        table: 'server_locations',
-        hash_attribute: 'id'
-      }
-
-      try {
-        results.server_location_table_result = await hdbCore.requestWithoutAuthentication(request);
-      } catch (e) {
-        results.server_location_table_result = e;
-      }
-
       return results;
     }
   });
