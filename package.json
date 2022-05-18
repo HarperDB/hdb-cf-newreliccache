@@ -1,0 +1,9 @@
+{
+  "name": "newrelic-api-cache",
+  "version": "1.0.0",
+  "description": "API Cache and Transform Layer for New Relic Hackathon",
+  "author": "jaxon@harperdb.io",
+  "dependencies": {
+    "needle": "^3.0.0"
+  }
+}
