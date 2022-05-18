@@ -2,15 +2,14 @@
 
 const handleRequest = require("../helpers/handleRequest");
 const handleResponse = require("../helpers/handleResponse");
-
-const OPENWEATHERMAP_APPID = "ENTER_YOUR_API_KEY_HERE";
+const config = require('../config');
 
 module.exports = async (server, { hdbCore, logger }) => {
   server.route({
     url: "/getWeather",
     method: "GET",
     handler: async (request, reply) => {
-      const url = `https://api.openweathermap.org/data/2.5/weather?appid=${OPENWEATHERMAP_APPID}&units=${request.query.units}&lat=${request.query.lat}&lon=${request.query.lon}`;
+      const url = `https://api.openweathermap.org/data/2.5/weather?appid=${config.OPENWEATHERMAP_APPID}&units=${request.query.units}&lat=${request.query.lat}&lon=${request.query.lon}`;
 
       const result = await handleRequest({
         hdbCore,
